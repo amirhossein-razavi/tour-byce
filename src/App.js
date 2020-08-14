@@ -13,7 +13,7 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={Auth} />
       <Route path="/Home" component={Main} />
-      {/* <Redirect to="/" /> */}
+      <Redirect to="/" />
     </Switch>
   </Provider>
 );

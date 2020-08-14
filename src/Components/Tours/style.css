@@ -7,3 +7,18 @@
     font-size: 16px;
     color: #444;
 }
+
+.card{
+    transition: all .3s ease-in-out;
+    border: none !important;
+    padding-top: 10px;
+    /* margin: 0 5px; */
+}
+
+.card:hover{
+    box-shadow: 1px 1px 10px #ddd , -1px -1px 10px #ddd;
+    transform: scale(1.01);
+    transition: all .3s ease-in-out;
+    z-index: 1000;
+    cursor: pointer;
+}

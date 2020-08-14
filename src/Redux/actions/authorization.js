@@ -1,6 +1,6 @@
 import * as ActionTypes from './ActionTypes';
 
-export const changeAuthStatus = (val) => ({
-  type: ActionTypes.CHANGE_AUTH_STATUS,
-  payload: val,
+export const onChange = (prop, val) => ({
+  type: ActionTypes.ON_LOGIN_CHNAGE,
+  payload: { prop, val },
 });
