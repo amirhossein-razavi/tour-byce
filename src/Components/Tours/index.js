@@ -11,7 +11,7 @@ import moment from 'moment-jalaali';
 
 // const mamd = randomDate();
 
-function Tours() {
+function Tours(props) {
 
     // const [time, setTime] = useState([]);
     var time = []
@@ -37,8 +37,8 @@ function Tours() {
                 <div class="row">
                     {tours.length && tours.map((tour) => {
                         return (
-                            <div class="col-lg-3 col-md-6 visit mb-3 mb-5 card" data-aos="fade-right">
-                                <a href="restaurant.html"><img src={require(`../../assets/images/tours-${tour.index + 1}.jpg`)} alt="Image placeholder" class="img-fluid" /> </a>
+                            <div onClick={() => props.props.props.history.push(`/post?tour=${tour.index}&time=${moment(time[tour.index]).format('jYYYY/jM/jD')}`)} class="col-lg-3 col-md-6 visit mb-3 mb-5 card" data-aos="fade-right">
+                                <img src={require(`../../assets/images/tours-${tour.index + 1}.jpg`)} alt="Image placeholder" class="img-fluid" />
                                 <p className='tour-address'>{tour.address}</p>
                                 <p className='text-right'>{tour.about.slice(0, arr[tour.index])} ... &nbsp; <a style={{ color: '#36b2ff' }}>بیشتر</a></p>
                                 <p className='text-right'>لیدر : <span style={{ color: '#222' }}>{tour.name}</span></p>

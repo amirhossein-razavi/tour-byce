@@ -2,9 +2,9 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import Home from '../Components/Home'
 
-function Main() {
+function Main(props) {
     return (
-        <Home />
+        <Home props={props}/>
     );
 }
 
