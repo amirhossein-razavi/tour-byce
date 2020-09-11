@@ -82,6 +82,7 @@ function Upload(props) {
       }]
       localStorage.setItem('myTours', [JSON.stringify(newData)])
     }
+    props.history.push({ pathname: './home' })
   }
 
   return (

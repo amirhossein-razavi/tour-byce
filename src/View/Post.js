@@ -65,12 +65,12 @@ function Post(props) {
       <div className={classes.root}>
         {tour &&
           <Grid container spacing={3}>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <Paper className={classes.paper}>
                 <img src={require(`../assets/images/tours-${+tour + 1}.jpg`)} className={classes.image} />
               </Paper>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <Paper className={classes.paper} style={{ paddingRight: 20, paddingLeft: 100 }}>
                 <h3 style={{ textAlign: 'right', color: '#777' }}>
                   {tours[tour].address}

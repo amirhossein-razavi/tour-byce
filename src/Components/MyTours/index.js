@@ -12,40 +12,47 @@ function MyTours(props) {
   }, [])
 
   return (
-    <div style={{ padding: 70, display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-      <h2 className='title'>
-        تورهای من
-                </h2>
-      {myTours ?
-        <table class="table">
-          <thead class="thead-light">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">test</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-              <th scope="col">Handle</th>
-            </tr>
-          </thead>
-          <tbody>
-            {myTours.map((tour, i) => {
-              return (
-                <tr>
-                  <th scope="row">{i + 1}</th>
-                  <td>{tour.address}</td>
-                  <td>{tour.date}</td>
-                  <td>{tour.description}</td>
-                  <td>{tour.leader}</td>
-                </tr>
-              )
-            })}
-          </tbody>
-        </table>
-        :
+    <div style={{ padding: 70, display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' ,alignItems:'center'}}>
+        <h2 className='title'>
+          تورهای من
+                </h2 >
         <Link to="/newpost" style={{ width: '20%', padding: '5px 20px', backgroundColor: "#3c8bfa", textAlign: 'center', color: '#fff', borderRadius: 10, cursor: 'pointer' }}>
           ثبت تور جدید
-          </Link>}
-    </div>
+          </Link>
+      </div>
+      {
+        myTours ?
+          <table class="table" >
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">مکان تور</th>
+                <th scope="col">تاریخ برگزاری</th>
+                <th scope="col">لیدر تور</th>
+                <th scope="col">توضیحات تور</th>
+              </tr>
+            </thead>
+            <tbody>
+              {myTours.map((tour, i) => {
+                return (
+                  <tr>
+                    <th scope="row">{i + 1}</th>
+                    <td>{tour.address}</td>
+                    <td>{tour.date}</td>
+                    <td>{tour.leader}</td>
+                    <td>{tour.description}</td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+          :
+            <p style={{fontSize:20}}>
+            اطلاعاتی موجود نسیت
+            </p>
+        }
+    </div >
   );
 }
 

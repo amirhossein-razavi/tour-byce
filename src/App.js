@@ -7,16 +7,17 @@ import Auth from './View/Authorization'
 import Main from './View/Main'
 import Post from './View/Post'
 import Upload from './View/Upload'
+import checkAthentication from './View/checkAthentication'
 
 
 const store = ConfigureStore();
-
 const App = () => (
 
   <Provider store={store}>
     <Switch>
-      <Route exact path="/" component={Auth} />
-      <Route path="/Home" component={Main} />
+      <Route exact path="/" component={checkAthentication} />
+      <Route exact path="/auth" component={Auth} />
+      <Route path="/home" component={Main} />
       <Route path="/post" component={Post} />
       <Route path="/newPost" component={Upload} />
       <Redirect to="/" />
